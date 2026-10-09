@@ -1,0 +1,203 @@
+/**
+ * AI Agent Framework - 主题样式
+ * CSS变量统一管理，支持暗黑/明亮模式
+ */
+
+:root {
+  /* 颜色系统 */
+  --color-primary: #3b82f6;
+  --color-primary-dark: #2563eb;
+  --color-primary-light: #dbeafe;
+  --color-secondary: #6b7280;
+  --color-secondary-dark: #4b5563;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-danger-dark: #dc2626;
+  --color-info: #06b6d4;
+
+  /* 文本颜色 */
+  --color-text: #111827;
+  --color-text-secondary: #6b7280;
+  --color-text-disabled: #9ca3af;
+
+  /* 背景颜色 */
+  --color-bg: #ffffff;
+  --color-bg-header: #ffffff;
+  --color-bg-sidebar: #f9fafb;
+  --color-bg-main: #ffffff;
+  --color-bg-footer: #f9fafb;
+  --color-bg-card: #ffffff;
+  --color-bg-hover: #f3f4f6;
+  --color-bg-disabled: #f3f4f6;
+
+  /* 边框 */
+  --color-border: #e5e7eb;
+  --color-border-dark: #d1d5db;
+
+  /* 页面/面板/输入背景 */
+  --color-bg-page: #f3f4f6;
+  --color-bg-panel: #fafbfc;
+  --color-bg-input: #ffffff;
+
+  /* 主色浅底（选中态） */
+  --color-primary-lighter: #eff6ff;
+
+  /* 状态色：浅底与文字 */
+  --color-success-light: #d1fae5;
+  --color-success-text: #065f46;
+  --color-warning-light: #fef3c7;
+  --color-warning-text: #92400e;
+  --color-danger-light: #fee2e2;
+  --color-danger-text: #991b1b;
+  --color-info-light: #dbeafe;
+  --color-info-text: #1e40af;
+
+  /* 徽章 */
+  --badge-default-bg: #f3f4f6;
+  --badge-default-text: #374151;
+  --badge-success-bg: #d1fae5;
+  --badge-success-text: #065f46;
+  --badge-warning-bg: #fef3c7;
+  --badge-warning-text: #92400e;
+  --badge-danger-bg: #fee2e2;
+  --badge-danger-text: #991b1b;
+  --badge-info-bg: #dbeafe;
+  --badge-info-text: #1e40af;
+
+  /* 间距 */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  /* 圆角 */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-full: 9999px;
+
+  /* 阴影 */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+  /* 字体 */
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+
+  /* 过渡 */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.2s ease;
+  --transition-slow: 0.3s ease;
+}
+
+/* 暗黑模式 */
+[data-theme="dark"] {
+  --color-text: #f9fafb;
+  --color-text-secondary: #9ca3af;
+  --color-text-disabled: #6b7280;
+
+  --color-bg: #111827;
+  --color-bg-header: #0f172a;
+  --color-bg-sidebar: #1e293b;
+  --color-bg-main: #111827;
+  --color-bg-footer: #1e293b;
+  --color-bg-card: #1e293b;
+  --color-bg-hover: #374151;
+  --color-bg-disabled: #374151;
+
+  --color-border: #374151;
+  --color-border-dark: #4b5563;
+
+  --color-bg-page: #0f172a;
+  --color-bg-panel: #243044;
+  --color-bg-input: #0f172a;
+
+  --color-primary-light: #1e3a5f;
+  --color-primary-lighter: #1e293b;
+
+  --color-success-light: #064e3b;
+  --color-success-text: #6ee7b7;
+  --color-warning-light: #78350f;
+  --color-warning-text: #fcd34d;
+  --color-danger-light: #7f1d1d;
+  --color-danger-text: #fca5a5;
+  --color-info-light: #1e3a8a;
+  --color-info-text: #93c5fd;
+
+  --badge-default-bg: #374151;
+  --badge-default-text: #e5e7eb;
+  --badge-success-bg: #064e3b;
+  --badge-success-text: #6ee7b7;
+  --badge-warning-bg: #78350f;
+  --badge-warning-text: #fcd34d;
+  --badge-danger-bg: #7f1d1d;
+  --badge-danger-text: #fca5a5;
+  --badge-info-bg: #1e3a8a;
+  --badge-info-text: #93c5fd;
+}
+
+/* 全局样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #app {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.5;
+}
+
+/* 表单控件主题化（大多数输入框无内联背景/文字色，统一由此接管）*/
+input:not([type="range"]):not([type="checkbox"]):not([type="radio"]),
+textarea,
+select {
+  background: var(--color-bg-input);
+  color: var(--color-text);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-text-disabled);
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-dark);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
+}
+
+/* 流式播放脉冲动画 */
+@keyframes pulse {
+  0%, 100% { opacity: 0.7; width: 20%; }
+  50% { opacity: 1; width: 40%; }
+}
